@@ -1,0 +1,17 @@
+m=int(input("Enter marks in Maths"))
+s=int(input("Enter marks in Science"))
+e=int(input("Enter marks in English"))
+h=int(input("Enter marks in Hindi"))
+ss=int(input("Enter marks in SST"))
+sum=m+s+h+e+ss
+print("Sum is ",sum)
+per=(sum/500)*100
+print("%age is ",per)
+if per>90:
+    print("Grade is A")
+elif per>80:
+    print("Grade is B")
+elif per>70:
+    print("Grade is C")
+else:
+    print("Grade is D")
