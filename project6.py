@@ -1,13 +1,6 @@
-print(ord('j'))
-print(ord('J'))
-print(ord('1'))
-print(ord('w'))
-print(ord('#'))
-print(ord('/'))
-print(ord('|'))
-print(ord('I'))
-print(ord('l'))
-print(ord('U'))
-
-
-
+import turtle
+t = turtle.Turtle()
+for i in range(4):
+    t.forward(100)  
+    t.left(90)     
+turtle.done()
