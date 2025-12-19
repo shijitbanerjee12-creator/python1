@@ -1,6 +1,9 @@
-a=10
-b=-10
-print("a<<1=",a<<1)
-print("b<<1=",b<<1)
-x=5
-print("x>>1=",x>>1)
+def cube(number):
+    return number*number*number
+def by_three(number):
+    if number%3==0:
+        return cube(number)
+    else:
+        return False
+print(by_three(9))
+print(by_three(4))
