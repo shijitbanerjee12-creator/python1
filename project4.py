@@ -1,34 +1,9 @@
-def decimal_to_binary(decimal_num):
-    """
-    Converts a decimal number to its binary representation.
-
-    Args:
-        decimal_num: An integer representing the decimal number.
-
-    Returns:
-        A string representing the binary equivalent of the decimal number.
-    """
-    if decimal_num == 0:
-        return "0"
-
-    binary_digits = []
-    while decimal_num > 0:
-        remainder = decimal_num % 2
-        binary_digits.append(str(remainder))
-        decimal_num //= 2
-
-
-    return "".join(binary_digits[::-1])
-
-# Example usage
-number = 28
-binary_representation = decimal_to_binary(number)
-print(f"The binary representation of {number} is: {binary_representation}")
-
-number = 15
-binary_representation = decimal_to_binary(number)
-print(f"The binary representation of {number} is: {binary_representation}")
-
-number = 0
-binary_representation = decimal_to_binary(number)
-print(f"The binary representation of {number} is: {binary_representation}")
+a = {30,40,70,20,80,50}
+b = {20,50,60,40,90,10}
+print("Original sets:")
+print("A :",a)
+print("B : ",b)
+res1 = a.symmetric_difference(b)
+print("\nSymmetric Difference of a - b:",res1)
+res2 = b.symmetric_difference(a)
+print("\nSymmetric Difference of b - a:",res2)
