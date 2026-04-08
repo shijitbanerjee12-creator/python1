@@ -1,27 +1,30 @@
-def generate_and_separate_squares():
-    """
-    Gets a number range from the user, creates a list of squares,
-    and separates them into odd and even lists.
-    """
+import tkinter as tk
+from datetime import date
+from tkinter import messagebox
+def calculate_age():
     try:
-        start_num = int(input("Enter the starting number of the range: "))
-        end_num = int(input("Enter the ending number of the range (inclusive): "))
-
-        # 1. Create the list of all squares using a list comprehension
-        # We add 1 to end_num because range() is exclusive of the stop value.
-        all_squares = [i**2 for i in range(start_num, end_num + 1)]
-        print(f"\nAll squares in range {start_num}-{end_num}: {all_squares}")
-
-        # 2. Separate odd and even squares using list comprehensions
-        # Check if a number (x) is even (x % 2 == 0) or odd (x % 2 != 0)
-        even_squares = [x for x in all_squares if x % 2 == 0]
-        odd_squares = [x for x in all_squares if x % 2 != 0]
-
-        print(f"\nOdd squares: {odd_squares}")
-        print(f"Even squares: {even_squares}")
-
-    except ValueError:
-        print("Invalid input. Please enter integers only.")
-
-# Run the function to start the program
-generate_and_separate_squares()
+        birth_day = int(day_entry.get())
+        birth_month = int(month_entry.get())
+        birth_year = int(year_entry.get())
+        today = date.today()
+        age = today.year - birth_year - ((today.month, today.day) < (birth_month, birth_day))
+        result_label.config(text=f"Your current age is: {age} years")
+    except ValueError:        
+        messagebox.showerror("Input Error", "Please enter valid numeric values for Day, Month, and Year.")
+root = tk.Tk()
+root.title("Age Calculator")
+root.geometry("300x250")
+tk.Label(root, text="Enter Day (DD):").pack(pady=5)
+day_entry = tk.Entry(root)
+day_entry.pack()
+tk.Label(root, text="Enter Month (MM):").pack(pady=5)
+month_entry = tk.Entry(root)
+month_entry.pack()
+tk.Label(root, text="Enter Year (YYYY):").pack(pady=5)
+year_entry = tk.Entry(root)
+year_entry.pack()
+calculate_btn = tk.Button(root, text="Calculate Age", command=calculate_age, bg="lightblue")
+calculate_btn.pack(pady=15)
+result_label = tk.Label(root, text="", font=("Arial", 10, "bold"))
+result_label.pack()
+root.mainloop()
