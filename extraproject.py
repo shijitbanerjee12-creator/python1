@@ -1,0 +1,20 @@
+import tkinter as tk
+from tkinter import messagebox
+def show_all_boxes():
+    messagebox.showinfo("Information", "This is an informative message.")
+    messagebox.showwarning("Warning", "This is a warning message.")
+    messagebox.showerror("Error", "This is an error message.")
+    res1 = messagebox.askokcancel("OK/Cancel", "Do you want to proceed?")
+    print(f"OK/Cancel response: {res1}")
+    res2 = messagebox.askyesno("Yes/No", "Do you like Python?")
+    print(f"Yes/No response: {res2}")
+    res3 = messagebox.askquestion("Question", "Is this a question?")
+    print(f"Question response: {res3}")
+    res4 = messagebox.askretrycancel("Retry/Cancel", "Operation failed. Retry?")
+    print(f"Retry/Cancel response: {res4}")
+    res5 = messagebox.askyesnocancel("Yes/No/Cancel", "Save changes before exiting?")
+    print(f"Yes/No/Cancel response: {res5}")
+root = tk.Tk()
+root.withdraw()
+show_all_boxes()
+root.destroy()
